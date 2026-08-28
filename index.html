@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Interactive planning aid for Saint Leo Finance students.">
+  <title>Finance Student Success Portal</title>
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="wrap nav"><a class="brand" href="#top">Finance Student Success Portal</a>
+    <nav><a href="#planner">Planner</a><a href="#map">Course Map</a><a href="#pathways">Pathways</a><a href="#meeting">Advising</a></nav>
+  </div>
+</header>
+<main id="top">
+<section class="hero"><div class="wrap hero-grid"><div><p class="eyebrow">Plan with confidence</p><h1>Build a clear path to graduation.</h1><p class="lead">Check completed courses, see what may be available next, and prepare a concise summary for your advising meeting.</p><div class="actions"><a class="button primary" href="#planner">Start planning</a><button class="button secondary" id="resetTop">Reset saved plan</button></div></div><div class="hero-card"><strong>Important</strong><p>This site is a planning aid, not an official degree audit. Students should confirm requirements, substitutions, transfer credit, course availability, and catalog-year rules with their advisor and Program Evaluation.</p></div></div></section>
+<section class="wrap stats" aria-label="Plan summary"><div><span id="completedCount">0</span><small>courses checked</small></div><div><span id="completedCredits">0</span><small>tracked credits</small></div><div><span id="eligibleCount">0</span><small>courses unlocked</small></div></section>
+<section id="planner" class="wrap section"><div class="section-head"><div><p class="eyebrow">Interactive planner</p><h2>What can I take next?</h2></div><div class="filters"><label>Show <select id="categoryFilter"><option value="All">All courses</option><option>Finance</option><option>Business</option><option>Core</option></select></label><label>Search <input id="searchBox" type="search" placeholder="FIN 470 or Risk"></label></div></div>
+<div class="planner-layout"><div><h3>Mark completed courses</h3><div id="courseList" class="course-list"></div></div><aside class="results"><h3>Potential next courses</h3><p class="muted">Based only on the prerequisites represented in this prototype.</p><div id="eligibleList"></div></aside></div></section>
+<section id="map" class="section tint"><div class="wrap"><p class="eyebrow">Critical sequence</p><h2>Finance prerequisite map</h2><div class="flow"><div class="node">ACC 201</div><span>→</span><div class="node">ACC 202</div><span>→</span><div class="node accent">FIN 325</div></div><div class="branch"><div class="node">FIN 420<br><small>Fall only</small></div><div class="node">FIN 450<br><small>Fall only</small></div><div class="node">FIN 410<br><small>Spring only</small></div><div class="node">FIN 470<br><small>Risk Analysis, Spring only</small></div></div><div class="flow"><span>↓</span><div class="node accent">FIN 498<br><small>Spring only</small></div></div></div></section>
+<section id="pathways" class="wrap section"><p class="eyebrow">Degree options</p><h2>Explore pathways</h2><div class="cards"><article><h3>B.S. Finance</h3><p>Use the planner to review the recommended sequence and critical fall-only and spring-only finance courses.</p></article><article><h3>Finance + Economics</h3><p>The attached advising checklist identifies a double-major option. Confirm double-counting and current catalog rules with an advisor.</p></article><article><h3>Finance 3+1 MBA</h3><p>The checklist also describes an accelerated MBA pathway with shared graduate-level finance coursework. Confirm admission and shared-credit rules before planning.</p></article></div></section>
+<section id="meeting" class="section tint"><div class="wrap"><p class="eyebrow">Meeting preparation</p><h2>Create an advising snapshot</h2><div class="form-grid"><label>Name<input id="studentName" placeholder="Student name"></label><label>Target graduation<input id="gradTerm" placeholder="Example: Spring 2028"></label><label>Questions<textarea id="questions" rows="4" placeholder="Courses, internship, MBA pathway, career goals..."></textarea></label></div><div class="actions"><button class="button primary" id="printBtn">Print or save as PDF</button><button class="button secondary" id="copyBtn">Copy summary</button></div><pre id="snapshot" class="snapshot"></pre></div></section>
+</main>
+<footer><div class="wrap"><p><strong>Finance Student Success Portal</strong></p><p>Prototype for advising use. Always verify decisions against the official catalog and Program Evaluation.</p></div></footer>
+<script src="assets/js/app.js"></script>
+</body></html>
