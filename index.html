@@ -31,8 +31,7 @@ Completed: ${[...completed].map(fmt).join(', ')||'None selected'}
 In progress: ${[...progress].map(fmt).join(', ')||'None selected'}
 
 PROJECTED ROADMAP
-${p.map(t=>`${t.term} ${t.year} (${t.credits} cr): ${t.pick.map(c=>fmt(c.code)+' '+c.title).join('; ')}`).join('
-')||'Generate a plan.'}
+${p.map(t=>`${t.term} ${t.year} (${t.credits} cr): ${t.pick.map(c=>fmt(c.code)+' '+c.title).join('; ')}`).join('\\n')||'Generate a plan.'}
 
 Verify with Program Evaluation, the catalog, actual sections, prerequisite grades, transfer work, substitutions, and advisor approval.`}
 const groups=['All',...new Set(COURSES.map(c=>c.group))];groupFilter.innerHTML=groups.map(g=>`<option value="${g}">${g==='All'?'All requirement groups':g}</option>`).join('');searchStatus.oninput=renderStatus;groupFilter.onchange=renderStatus;generate.onclick=gen;reset.onclick=()=>{localStorage.clear();location.reload()};copy.onclick=async()=>{summary();await navigator.clipboard.writeText(text.textContent);copy.textContent='Copied'};['start','year','load','outside','target'].forEach(id=>$('#'+id).onchange=summary);renderStatus();metrics();renderAlerts();summary();</script></body></html>
